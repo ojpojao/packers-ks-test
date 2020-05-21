@@ -23,8 +23,10 @@
         "ssh_username": "root",
         "ssh_password": "vagrant",
         "ssh_timeout": "10m",
+        "skip_nat_mapping": true,
         "vboxmanage": [
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
-        ]
+        ],
+        "disable_shutdown": true
     }]
 }
