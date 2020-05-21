@@ -10,7 +10,6 @@
         "cpus": 1,
         "memory": 1024,
         "output_directory": "fedora31-{{build_type}}",
-        "http_directory": "http",
         "boot_wait": "5s",
         "boot_command": [
             "<tab>",
