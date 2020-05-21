@@ -15,7 +15,7 @@
         "boot_command": [
             "<tab>",
             "<bs><bs><bs><bs><bs>",
-            "inst.ks=https://gist.githubusercontent.com/ojpojao/913968b30f0fe7e846b0ccafa169b7f3/raw/5fc678dad44a70e7101f2ae23984e92ba16803cf/ks.cfg",
+            "inst.ks=https://raw.githubusercontent.com/ojpojao/packers-ks-test/master/ks.cfg",
             "<wait10s><enter>"
         ],
         "communicator": "ssh",
