@@ -9,6 +9,7 @@
         "vm_name": "fedora-automagic",
         "cpus": 1,
         "memory": 1024,
+        "headless": true,
         "output_directory": "fedora31-{{build_type}}",
         "boot_wait": "5s",
         "boot_command": [
@@ -25,11 +26,6 @@
         "skip_nat_mapping": true,
         "vboxmanage": [
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
-        ],
-        "shutdown_command": "systemctl poweroff"
-    }],
-    "provisioners": [{
-        "type": "shell",
-        "inline": ["touch ~/.sudo_as_admin_successful"]
+        ]
     }]
 }
