@@ -1,5 +1,4 @@
-port
 packer_teste.json
 ks-vmware.cfg
-packer_cache
+packer_cache/*
 packer.exe
