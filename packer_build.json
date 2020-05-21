@@ -15,6 +15,7 @@
         "boot_command": [
             "<tab>",
             "<bs><bs><bs><bs><bs>",
+            "inst.sshd ",
             "inst.ks=https://raw.githubusercontent.com/ojpojao/packers-ks-test/master/ks.cfg",
             "<wait10s><enter>"
         ],
