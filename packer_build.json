@@ -27,5 +27,9 @@
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
         ],
         "shutdown_command": "systemctl poweroff"
+    }],
+    "provisioners": [{
+        "type": "shell",
+        "inline": ["touch ~/.sudo_as_admin_successful"]
     }]
 }
