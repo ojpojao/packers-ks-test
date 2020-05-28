@@ -1,13 +1,22 @@
 {
+    "variables": {
+        "os_type": "Fedora_64",
+        "d_size": "8000",
+        "vmname": "fedora-automagic",
+        "vcpus": 1,
+        "host": "192.168.0.20",
+        "username": "vagrant",
+        "password": "vagrant"
+    },
     "builders": [{
         "type": "virtualbox-iso",
-        "guest_os_type": "Fedora_64",
+        "guest_os_type": "{{user `os_type`}}",
         "iso_checksum_type": "sha256",
         "iso_checksum": "225ebc160e40bb43c5de28bad9680e3a78a9db40c9e3f4f42f3ee3f10f95dbeb",
         "iso_url": "../Fedora-Server-dvd-x86_64-31-1.9.iso",
-        "disk_size": "20000",
-        "vm_name": "fedora-automagic",
-        "cpus": 1,
+        "disk_size": "{{user `d_size`}}",
+        "vm_name": "{{user `vmname`}}",
+        "cpus": "{{user `vcpus`}}",
         "memory": 2048,
         "headless": false,
         "output_directory": "fedora31-{{build_type}}",
@@ -19,9 +28,9 @@
             "<wait10s><enter>"
         ],
         "communicator": "ssh",
-        "ssh_host": "192.168.0.10",
-        "ssh_username": "vagrant",
-        "ssh_password": "vagrant",
+        "ssh_host": "{{user `host`}}",
+        "ssh_username": "{{user `username`}}",
+        "ssh_password": "{{user `password`}}",
         "ssh_timeout": "10m",
         "skip_nat_mapping": true,
         "vboxmanage": [
