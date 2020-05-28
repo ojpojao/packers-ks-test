@@ -22,7 +22,7 @@
         "output_directory": "fedora31-{{build_type}}",
         "boot_wait": "5s",
         "boot_command": [
-            "<tab>",
+            "<tab><wait10s>",
             "<bs><bs><bs><bs><bs>",
             "inst.ks=https://raw.githubusercontent.com/ojpojao/packers-ks-test/master/ks.cfg",
             "<wait10s><enter>"
