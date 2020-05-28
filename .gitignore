@@ -3,3 +3,4 @@ ks-vmware.cfg
 packer_cache/*
 packer.exe
 fedora31-virtualbox-iso/*
+automatic.code-workspace
