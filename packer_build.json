@@ -8,7 +8,7 @@
         "disk_size": "20000",
         "vm_name": "fedora-automagic",
         "cpus": 1,
-        "memory": 1024,
+        "memory": 2048,
         "headless": false,
         "output_directory": "fedora31-{{build_type}}",
         "boot_wait": "5s",
@@ -26,6 +26,12 @@
         "skip_nat_mapping": true,
         "vboxmanage": [
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
+        ]
+    }],
+    "provisioners": [{
+        "type": "shell",
+        "inline": [
+            "echo  -e 'vagrant' | sudo -S dnf install ansible -y"
         ]
     }]
 }
