@@ -28,10 +28,22 @@
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
         ]
     }],
-    "provisioners": [{
-        "type": "shell",
-        "inline": [
-            "echo  -e 'vagrant' | sudo -S dnf install ansible -y"
-        ]
-    }]
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "echo  -e 'vagrant' | sudo -S dnf install ansible -y"
+            ]
+        },
+        {
+            "type": "file",
+            "destination": "/home/vagrant/",
+            "source": "./ansible"
+        },
+        {
+            "type": "ansible-local",
+            "playbook_file": "./ansible/check_connectivity.yml",
+            "inventory_file": "./ansible/hosts"
+        }
+    ]
 }
