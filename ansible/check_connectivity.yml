@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: false
+
+  tasks:
+
+  - name: ping
+    win_ping:
+    register: win_ping
+
+  - debug: var={{ item }}
+    loop:
+      - win_ping
