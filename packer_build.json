@@ -13,18 +13,20 @@
         "guest_os_type": "{{user `os_type`}}",
         "iso_checksum_type": "sha256",
         "iso_checksum": "225ebc160e40bb43c5de28bad9680e3a78a9db40c9e3f4f42f3ee3f10f95dbeb",
-        "iso_url": "../Fedora-Server-dvd-x86_64-31-1.9.iso",
+        "iso_url": "../../Fedora-Server-dvd-x86_64-31-1.9.iso",
         "disk_size": "{{user `d_size`}}",
         "vm_name": "{{user `vmname`}}",
         "cpus": "{{user `vcpus`}}",
         "memory": 2048,
         "headless": false,
         "output_directory": "fedora31-{{build_type}}",
+        "skip_nat_mapping": true,
+        "http_directory": "./files/",
         "boot_wait": "5s",
         "boot_command": [
             "<tab><wait10s>",
             "<bs><bs><bs><bs><bs>",
-            "inst.ks=https://raw.githubusercontent.com/ojpojao/packers-ks-test/master/ks.cfg",
+            "inst.ks=http://192.168.1.148:{{ .HTTPPort }}/ks.cfg",
             "<wait10s><enter>"
         ],
         "communicator": "ssh",
@@ -32,7 +34,6 @@
         "ssh_username": "{{user `username`}}",
         "ssh_password": "{{user `password`}}",
         "ssh_timeout": "10m",
-        "skip_nat_mapping": true,
         "vboxmanage": [
             ["modifyvm", "{{ .Name }}", "--nic1", "bridged", "--bridgeadapter1", "Intel(R) Dual Band Wireless-AC 8260"]
         ]
