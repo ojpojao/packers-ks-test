@@ -1,9 +1,17 @@
-# Build example with packer, Fedora Server 32 and VirtualBox
+# Bulding Automated Fedora Server Image with Packer
 
-My First image build with Packer, VirtualBox and Fedora-Server32.
+### What do we need?
 
-### Packages Versions
-- Windows 10 1903 x64
-- VirtualBox Versão 6.1.8 r13798 x64
-- Packer 1.5.6
+1. [Fedora Server 31 amd64](http://fedora.c3sl.ufpr.br/linux/releases/31/Server/x86_64/iso/Fedora-Server-dvd-x86_64-31-1.9.iso)
+
+2. A KickStart File [ks.cfg](https://raw.githubusercontent.com/ojpojao/packers-ks-test/master/ks.cfg)
+
+3. [Virtual Box](https://www.virtualbox.org/)
+
+4. [Packer](https://www.packer.io/)
+
+### What is packer?
+
+Packer is a tool that according to its creator Hashicorp, creates machine images in an automated way.
+
 
