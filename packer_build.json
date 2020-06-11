@@ -6,11 +6,11 @@
         "iso_checksum": "225ebc160e40bb43c5de28bad9680e3a78a9db40c9e3f4f42f3ee3f10f95dbeb",
         "iso_url": "../Fedora-Server-dvd-x86_64-31-1.9.iso",
         "disk_size": "{{user `d_size`}}",
-        "vm_name": "{{user `vmname`}}",
+        "vm_name": "{{user `vmname`}}-{{user `date`}}-{{timestamp}}",
         "cpus": "{{user `vcpus`}}",
         "memory": 2048,
-        "headless": false,
-        "output_directory": "fedora31-{{build_type}}",
+        "headless": true,
+        "output_directory": "output/fedora31-{{build_type}}-{{user `date`}}",
         "http_directory": "./http/",
         "boot_wait": "5s",
         "boot_command": [
@@ -45,5 +45,10 @@
             "playbook_file": "./ansible/check_connectivity.yml",
             "inventory_file": "./ansible/hosts"
         }
-    ]
+    ],
+    "post-processors": [{
+        "type": "vagrant",
+        "compression_level": 1,
+        "keep_input_artifact": true,
+        "output": "output/fedora31-{{build_type}}-{{user `date`}}-{{timestamp}}.box"    }]
 }

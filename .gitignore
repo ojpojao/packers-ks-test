@@ -5,3 +5,4 @@ packer.exe
 fedora31-virtualbox-iso/*
 automatic.code-workspace
 ansible/hosts
+output/*
