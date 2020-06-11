@@ -1,0 +1,9 @@
+{
+    "os_type": "Fedora_64",
+    "d_size": "8000",
+    "vmname": "fedora-automagic",
+    "vcpus": "1",
+    "host": "192.168.1.20",
+    "username": "vagrant",
+    "password": "vagrant"
+}
